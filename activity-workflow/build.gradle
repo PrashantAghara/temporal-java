@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.workflow'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.temporal:temporal-sdk:1.31.0'
+    testImplementation 'io.temporal:temporal-testing:1.31.0'
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation 'org.rapidoid:rapidoid-http-server:5.5.5'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+mainClassName = 'com.workflow.Main'
